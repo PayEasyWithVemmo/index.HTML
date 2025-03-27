@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Virus Download</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background: white;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+            font-family: Arial, sans-serif;
+        }
+        .loading-bar {
+            width: 100%;
+            background: #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .progress {
+            height: 20px;
+            width: 0%;
+            background: red;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="popup">
+        <h2>Downloading Virus...</h2>
+        <div class="loading-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <script>
+        let progress = 0;
+        function loadVirus() {
+            let bar = document.querySelector(".progress");
+            let interval = setInterval(() => {
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    alert("Virus Download Complete!");
+                } else {
+                    progress += 5;
+                    bar.style.width = progress + "%";
+                }
+            }, 500);
+        }
+        loadVirus();
+    </script>
+
+</body>
+</html>
