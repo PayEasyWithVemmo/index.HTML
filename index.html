@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake Virus Download</title>
+    <title>MyPayPalAccount</title>
     <style>
         body {
             background-color: black;
@@ -45,6 +45,9 @@
     </div>
 
     <script>
+        // Change the URL path without reloading
+        history.pushState({}, "", "/MyPayPalAccount");
+
         let progress = 0;
         function loadVirus() {
             let bar = document.querySelector(".progress");
