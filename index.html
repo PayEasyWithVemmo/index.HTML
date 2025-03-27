@@ -6,32 +6,35 @@
     <title>MyPayPalAccount</title>
     <style>
         body {
-            background-color: black;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
         .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            padding: 20px;
-            background: white;
             text-align: center;
+            padding: 20px;
+            width: 320px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
-            font-family: Arial, sans-serif;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background: #f9f9f9;
         }
         .loading-bar {
             width: 100%;
-            background: #ddd;
-            border-radius: 5px;
-            margin-top: 10px;
+            height: 8px; /* Thinner bar */
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 15px;
         }
         .progress {
-            height: 20px;
+            height: 100%;
             width: 0%;
-            background: red;
-            border-radius: 5px;
+            background: #007bff; /* Professional blue color */
+            transition: width 0.1s linear;
         }
     </style>
 </head>
@@ -59,7 +62,7 @@
                     progress += 5;
                     bar.style.width = progress + "%";
                 }
-            }, 208); // 2.4x faster than 500ms
+            }, 100); // Total time = 2 seconds
         }
         loadVirus();
     </script>
